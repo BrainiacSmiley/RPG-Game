@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RPG Game</title>
+    <link type="text/css" href="includes/css/index.css" rel="stylesheet">
+    <link type="text/css" href="includes/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="alert alert-warning alert-dismissible alertBox" role="alert" id="errorBox">
+    <button type="button" class="close" data-dismiss="alert" onclick="$('#errorBox').hide();">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>Error!</strong>
+
+    <div id="error_msg">
+    </div>
+</div>
+<div class="alert alert-success alert-dismissible alertBox" role="alert" id="successBox">
+    <button type="button" class="close" data-dismiss="alert" onclick="$('#successBox').hide();">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>Success!</strong>
+
+    <div id="success_msg">
+    </div>
+</div>
+<div id="gameDisplayContainer">
+    <!--<canvas id="gameDisplay" width="1640" height="920"></canvas>-->
+    <canvas id="gameDisplay" width="800" height="400"></canvas>
+</div>
+<div id="tilesSelector" class="panel panel-default">
+    <div class="panel-body">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary tile active">
+                <input type="radio" name="tileOptions" data-id="-1" onchange="Controller.selectTile()"> None
+            </label>
+            <label class="btn btn-primary tile" style="background-image: url('includes/pics/tiles/grass.jpg')">
+                <input type="radio" name="tileOptions" data-id="2" onchange="Controller.selectTile()">Grass
+            </label>
+            <label class="btn btn-primary tile" style="background-image: url('includes/pics/tiles/rock.jpg')">
+                <input type="radio" name="tileOptions" data-id="1" onchange="Controller.selectTile()">Rock
+            </label>
+            <label class="btn btn-primary tile" style="background-image: url('includes/pics/tiles/pave.jpg')">
+                <input type="radio" name="tileOptions" data-id="3" onchange="Controller.selectTile()">Pave
+            </label>
+        </div>
+    </div>
+</div>
+<div id="windowControls" class="panel panel-default windowControls">
+    <div class="panel-body">
+        <div class="enterFullscreen"
+             onclick="FullScreen.vendorPrefixMethod(document.getElementsByTagName('body')[0], 'RequestFullScreen'); return false;"></div>
+        <div class="exitFullscreen"
+             onclick="FullScreen.vendorPrefixMethod(document, 'CancelFullScreen'); return false;"></div>
+    </div>
+</div>
+<div id="statsDisplay"></div>
+
+<script type="text/javascript" src="includes/js/vendor/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="includes/js/vendor/stats.js"></script>
+<script type="text/javascript" src="includes/js/vendor/easeljs-0.7.1.min.js"></script>
+<script type="text/javascript" src="includes/js/vendor/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="includes/js/character.js"></script>
+<script type="text/javascript" src="includes/js/fullscreen.js"></script>
+<script type="text/javascript" src="includes/js/game.js"></script>
+<script type="text/javascript" src="includes/js/gameactions.js"></script>
+<script type="text/javascript" src="includes/js/Tile.js"></script>
+<script type="text/javascript" src="includes/js/tiles.js"></script>
+
+<script type="text/javascript" src="includes/js/controller.js"></script>
+<script type="text/javascript" src="includes/js/keyboard.js"></script>
+<script type="text/javascript" src="includes/js/socketio.js"></script>
+
+<script type="text/javascript" src="includes/js/rpggame.js"></script>
+</body>
+</html>

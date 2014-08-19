@@ -1,0 +1,81 @@
+body {
+    overflow: hidden;
+}
+.enterFullscreen {
+    background-image: url('../pics/fullscreen_40.png');
+    width: 40px;
+    height: 40px;
+}
+
+.exitFullscreen {
+    background-image: url('../pics/fullscreen_exit_40.png');
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+
+:-webkit-full-screen .enterFullscreen {
+    display: none;
+}
+
+:-moz-full-screen .enterFullscreen {
+    display: none;
+}
+
+:-webkit-full-screen .exitFullscreen {
+    display: block;
+}
+
+:-moz-full-screen .exitFullscreen {
+    display: block;
+}
+
+#windowControls {
+    position: absolute;
+    right: -2px;
+    bottom: 0;
+}
+
+#tilesSelector {
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+
+#statsDisplay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 160px;
+    height: 48px;
+}
+
+#statsDisplay > div {
+    float: left;
+}
+
+#gameDisplayContainer {
+    margin: 0 auto;
+    width: 800px;
+}
+
+#gameDisplay {
+    background-color: wheat;
+}
+
+.tile {
+    width: 50px;
+    height: 50px;
+    padding-top: 13px !important;
+    padding-left: 5px !important;
+}
+
+.alertBox {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -150px;
+    width: 300px;
+    display: none;
+    z-index: 10;
+}
